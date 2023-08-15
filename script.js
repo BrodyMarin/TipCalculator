@@ -16,7 +16,8 @@ function calculateTip(){
     if(numPeople === "" || numPeople <= 1) {
         numPeople = 1;
         document.getElementById("each").style.display = "none";
-    } else{
+    }
+    else {
         document.getElementById("each").style.display = "block";
     }
     
@@ -31,8 +32,11 @@ function calculateTip(){
     document.getElementById("tip").innerHTML = total;
 
     //Display a message
-    if(name !== "") {
-        window.alert("Your tip amount has been calculated, " + name);
+    if(name !== "" & numPeople === 1) {
+        window.alert("Your tip amount has been calculated, " + name + ". It is $" + total + ".");
+    }
+    else if(name !== "" & numPeople > 1) {
+        window.alert("Your tip amounts have been calculated, " + name + ". They are $" + total + " each.")
     }
 }
 
